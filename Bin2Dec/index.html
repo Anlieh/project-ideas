@@ -28,13 +28,11 @@
             <span class="input-group-addon" id="">二进制</span>
             <input type="text" class="form-control" placeholder="待转数字" id="inputData">
         </div>
-    </div>
-    <div class="input-group">
-        <span class="input-group-addon" id="">十进制</span>
-        <input type="text" class="form-control" placeholder="转换结果" id="outputData">
-    </div>
-
-    <button class="btn btn-default" onclick="convert()">开始转换</button>
+        <div class="input-group">
+            <span class="input-group-addon" id="">十进制</span>
+            <input type="text" class="form-control" placeholder="转换结果" id="outputData">
+        </div>
+        <button class="btn btn-default" onclick="convert()">开始转换</button>
 
     </div>
 
@@ -42,11 +40,8 @@
 
         function convert() {
             let val1 = document.getElementById("inputData").value
-            // let val2 = document.getElementById("outputData").value
-
             let result = dec2bin(Number(val1))
             document.getElementById("outputData").value = result
-
         }
 
     </script>
