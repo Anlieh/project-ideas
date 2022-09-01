@@ -24,15 +24,28 @@
         You need to enable JavaScript to run this app.
     </noscript>
     <div id="root">
-        <div class="input-group">
-            <span class="input-group-addon" id="">十进制</span>
-            <input type="text" class="form-control" placeholder="待转数字" id="inputData">
+        <div>
+            <div class="input-group">
+                <span class="input-group-addon" id="">十进制</span>
+                <input type="text" class="form-control" placeholder="待转数字" id="inputData">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="">二进制</span>
+                <input type="text" class="form-control" placeholder="转换结果" id="outputData">
+            </div>
+            <button class="btn btn-default" onclick="convert()">开始转换</button>
         </div>
-        <div class="input-group">
-            <span class="input-group-addon" id="">二进制</span>
-            <input type="text" class="form-control" placeholder="转换结果" id="outputData">
+        <div>
+            <div class="input-group">
+                <span class="input-group-addon" id="">二进制</span>
+                <input type="text" class="form-control" placeholder="待转数字" id="inputData2">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="">十进制</span>
+                <input type="text" class="form-control" placeholder="转换结果" id="outputData2">
+            </div>
+            <button class="btn btn-default" onclick="convert2()">开始转换</button>
         </div>
-        <button class="btn btn-default" onclick="convert()">开始转换</button>
 
     </div>
 
@@ -44,14 +57,29 @@
         }
 
         function convert() {
-            let val1 = document.getElementById("inputData").value
-            if (isDecimal(val1)) {
-                let result = dec2bin(Number(val1))
+            /**
+             * 十进制转换为二进制的点击事件
+             */
+            let val = document.getElementById("inputData").value
+            if (isDecimal(val)) {
+                let result = dec2bin(Number(val))
                 document.getElementById("outputData").value = result
             } else {
                 alert('请输入数字!')
             }
+        }
 
+        function convert2() {
+            /**
+             * 二进制转换为十进制的点击事件
+             */
+            let val = document.getElementById("inputData2").value
+            if (isDecimal(val)) {
+                let result = bin2dec(Number(val))
+                document.getElementById("outputData2").value = result
+            } else {
+                alert('请输入数字!')
+            }
         }
 
     </script>
