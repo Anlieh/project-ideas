@@ -25,11 +25,11 @@
     </noscript>
     <div id="root">
         <div class="input-group">
-            <span class="input-group-addon" id="">二进制</span>
+            <span class="input-group-addon" id="">十进制</span>
             <input type="text" class="form-control" placeholder="待转数字" id="inputData">
         </div>
         <div class="input-group">
-            <span class="input-group-addon" id="">十进制</span>
+            <span class="input-group-addon" id="">二进制</span>
             <input type="text" class="form-control" placeholder="转换结果" id="outputData">
         </div>
         <button class="btn btn-default" onclick="convert()">开始转换</button>
@@ -38,10 +38,20 @@
 
     <script>
 
+        function isDecimal(str) {
+            var patrn = /^\d+(\.\d+)?$/
+            return patrn.test(str)
+        }
+
         function convert() {
             let val1 = document.getElementById("inputData").value
-            let result = dec2bin(Number(val1))
-            document.getElementById("outputData").value = result
+            if (isDecimal(val1)) {
+                let result = dec2bin(Number(val1))
+                document.getElementById("outputData").value = result
+            } else {
+                alert('请输入数字!')
+            }
+
         }
 
     </script>
